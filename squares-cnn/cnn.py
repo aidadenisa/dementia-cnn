@@ -27,7 +27,7 @@ classifier.add(MaxPooling2D(pool_size = (2, 2)))
 classifier.add(Flatten())
 
 #Add a fully connected layer
-classifier.add(Dense(units = 16, activation = 'relu'))
+classifier.add(Dense(units = 64, activation = 'relu'))
 
 #OUTPUT LAYER
 #only one node, because it is the root of the binary tree of decisions
@@ -48,7 +48,7 @@ test_set = test_datagen.flow_from_directory('testset', target_size = (64, 64), b
 #fit the data to our model!
 #steps per epoch contains the number of training images
 #epoch - a training cycle
-classifier.fit_generator(training_set, steps_per_epoch = 69, epochs = 25, validation_data = test_set, validation_steps = 10)
+classifier.fit_generator(training_set, steps_per_epoch = 50, epochs = 16, validation_data = test_set, validation_steps = 10)
 
 # serialize model to JSON
 classifier_json = classifier.to_json()

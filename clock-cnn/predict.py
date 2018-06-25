@@ -15,7 +15,7 @@ if args.image is None:
 if args.scriptFolder is None:
     scriptFolder = ''
 else:
-    scriptFolder = args.scriptFolder + "\\"
+    scriptFolder = args.scriptFolder + "/"
 
 if args.image is not None:
 
